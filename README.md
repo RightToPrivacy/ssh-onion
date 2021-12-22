@@ -5,6 +5,10 @@ Only those you share the onion address with will be able to ssh if you block ssh
 
 After created, onion address prints to screen.
 
+#### USAGE
+
+    sudo bash ssh-onion
+
 (originally created to remotely help friends by shell - but can be used to automate ssh onion creation for anyone)
 
 
