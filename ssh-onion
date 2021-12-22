@@ -1,0 +1,45 @@
+#!/bin/bash
+#
+# installs tor, sshd, 
+# then create tor hidden service
+# for sshd
+#
+# run with sudo/root
+#
+# righttoprivacy[at]tutanota.com
+# blog: https://www.buymeacoffee.com/politictech/posts
+# blog mirror: https://politictech.wordpress.com
+#
+
+
+
+# INSTALL SSH SERVER + TOR
+echo "Now installing ssh server..."
+sudo apt update
+sudo apt install tor ssh -y
+
+
+# VARIABLES
+port="22"                                       # Default port 80
+HSD='/var/lib/tor/hidden_service/'              # Location for hidden service conf
+TorConf='/etc/tor/torrc'                        # Tor Configuration File Location (change if needed)
+Tor2Conf='/usr/share/tor/tor-service-defaults-torrc' # Second Tor Conf Location
+
+echo 'Adding New SSH Onion To Tor Configuration...'
+sleep 1
+echo ''
+sudo echo "HiddenServiceDir $HSD" >> $TorConf
+sudo echo "HiddenServiceDir $HSD" >> $Tor2Conf
+sleep .25
+sudo echo "HiddenServicePort $port 127.0.0.1:$port" >> $TorConf
+sudo echo "HiddenServicePort $port 127.0.0.1:$port" >> $Tor2Conf
+echo ''
+echo "Tor configuration finished. Now attempting to reload Tor Service."
+echo ""
+sleep .5
+sudo service tor restart
+sleep .5
+sudo systemctl status tor
+
+echo -e "Now printing onion address...\n"
+sudo cat /var/lib/tor/hidden_service/hostname
