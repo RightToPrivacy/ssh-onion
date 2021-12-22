@@ -11,11 +11,19 @@ After created, onion address prints to screen.
 
 (originally created to remotely help friends by shell - but can be used to automate ssh onion creation for anyone)
 
-The next usernew script is for adding a trusted sudo user (audit etc/if you use it)
+The next usernew script is for adding a trusted sudo user
 
 To use this, edit the username variable value and run with:
 
     sudo bash usernew
+    
+(Created to help secure friend Linux system) If usernew script is run, escalation to root can be done with:
+
+    sudo bash 
+
+from the $username inside usernew.
+
+
 
 BLOG: https://www.buymeacoffee.com/politictech/posts
 mirror: https://politictech.wordpress.com
