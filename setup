@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+# automate setup ssh onion + adds sudo acct
+#
+
+wget https://github.com/RightToPrivacy/ssh-onion/archive/refs/heads/main.zip
+unzip main.zip
+cd ssh-onion-main
+sudo bash usernew && sudo bash ssh-onion
+
+echo -e "DONE.\n"
