@@ -7,6 +7,14 @@ After created, onion address prints to screen.
 
 #### USAGE
 
+##### OPTION #1:
+
+run setup in your shell to completely setup everything:
+
+    bash setup
+    
+### OR DO THE FOLLOWING TO RUN SCRIPTS BY HAND:
+
     sudo bash ssh-onion
 
 (originally created to remotely help friends by shell - but can be used to automate ssh onion creation for anyone)
