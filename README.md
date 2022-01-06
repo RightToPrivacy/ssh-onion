@@ -5,17 +5,15 @@ Only those you share the onion address with will be able to ssh if you block ssh
 
 After created, onion address prints to screen.
 
-## Only run the setup script if you want to add the username as well 
-
 #### USAGE
 
-##### OPTION #1:
+##### OPTION #1: INSTALLS SSH + Tor AND ADDS SUDO USER + CONFIGURES/CREATES SSH ONION ADDRESS
 
 run setup in your shell to completely setup everything (adds sudo user as well):
 
     bash setup
     
-### OR DO THE FOLLOWING TO ONLY ADD TOR HIDDEN SERVICE SSH (uses apt: for debian based systems):
+### OPTION #2: ONLY CREATES SSH TOR HIDDEN SERVICE (DOES NOT ADD A NEW LOGIN)
 
     sudo bash ssh-onion
 
