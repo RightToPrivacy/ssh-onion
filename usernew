@@ -3,13 +3,15 @@
 # adds new user to sudo group
 # to allow login/audit or otherwise
 #
-# Automates adding trusted user
+# ADDING WARNINGS - this was designed for someone I know - don't run unless you understand it
+# Thank you. (It adds a user in sudo group)
 #
 
 username="rtp"	# change this to any username
 
 echo -e "Adding $username account...\n"
 
+# BELOW ADDS NEW USER - change the username="rtp" to replace rtp with the username you want
 sudo adduser --ingroup sudo $username
 
 sudo passwd $username
