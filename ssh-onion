@@ -39,7 +39,37 @@ echo ""
 sleep .5
 sudo service tor restart
 sleep .5
-sudo systemctl status tor
 
+cat << "EOF"
+
+                            ~
+                           /~
+                     \  \ /**
+                      \ ////
+                      // //
+                     // //
+                   ///&//
+                  / & /\ \
+                /  & .,,  \
+              /& %  :       \
+            /&  %   :  ;     `\
+           /&' &..%   !..    `.\
+          /&' : &''" !  ``. : `.\
+         /#' % :  "" * .   : : `.\
+        I# :& :  !"  *  `.  : ::  I
+        I &% : : !%.` '. . : : :  I
+        I && :%: .&.   . . : :  : I
+        I %&&&%%: WW. .%. : :     I
+         \&&&##%%%`W! & '  :   ,'/
+          \####ITO%% W &..'  #,'/
+            \W&&##%%&&&&### %./
+              \###j[\##//##}/
+                 ++///~~\//_
+                  \\ \ \ \  \_
+                  /  /    \
+EOF
+
+sleep 1
 echo -e "Now printing onion address...\n"
 sudo cat /var/lib/tor/hidden_service/hostname
+echo -e "All Done. 👍 \n"
