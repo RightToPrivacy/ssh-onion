@@ -7,14 +7,14 @@
 # run with sudo/root
 #
 # righttoprivacy[at]tutanota.com
-# blog: https://www.buymeacoffee.com/politictech/posts
+# blog (more posts/public): https://www.buymeacoffee.com/politictech/posts
 # blog mirror: https://politictech.wordpress.com
 #
 
 
 
 # INSTALL SSH SERVER + TOR
-echo "Now installing ssh server..."
+echo "Now installing ssh server..." && sleep .5
 sudo apt update
 sudo apt install tor ssh -y
 
@@ -25,7 +25,7 @@ HSD='/var/lib/tor/hidden_service/'              # Location for hidden service co
 TorConf='/etc/tor/torrc'                        # Tor Configuration File Location (change if needed)
 Tor2Conf='/usr/share/tor/tor-service-defaults-torrc' # Second Tor Conf Location
 
-echo 'Adding New SSH Onion To Tor Configuration...'
+echo 'Adding New SSH Onion To Tor Configuration...' && sleep .5
 sleep 1
 echo ''
 sudo echo "HiddenServiceDir $HSD" >> $TorConf
@@ -41,7 +41,6 @@ sudo service tor restart
 sleep .5
 
 cat << "EOF"
-
                             ~
                            /~
                      \  \ /**
@@ -72,4 +71,5 @@ EOF
 sleep 1
 echo -e "Now printing onion address...\n"
 sudo cat /var/lib/tor/hidden_service/hostname
+echo -e "\n"
 echo -e "All Done. 👍 \n"
